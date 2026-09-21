@@ -3,6 +3,8 @@
 A standalone macOS 14+ SwiftUI color picker extracted from Solid.
 No third-party dependencies.
 
+![FigmaColorPicker with the saturation/brightness surface, hue and alpha sliders, and HEX input](Example/demo.jpg)
+
 Includes the original saturation/brightness and saturation/lightness surfaces,
 hue and alpha sliders, HSB/RGB/HSL numeric inputs, HEX input/output, and screen eyedropper.
 Original MIT attribution is in `LICENSE`.
@@ -94,10 +96,10 @@ swift test
 ```
 
 The tests cover grayscale normalization, P3/alpha preservation, achromatic hue and
-saturation, and strict hex parsing. `Examples/PickerDemo` is a standalone consumer
+saturation, and strict hex parsing. `Example/PickerDemo` is a standalone consumer
 for manually checking presentation, live changes, external updates, and reopening:
 
 ```sh
-cd Examples/PickerDemo
+cd Example/PickerDemo
 swift run
 ```
