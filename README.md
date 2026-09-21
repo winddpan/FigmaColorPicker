@@ -77,12 +77,14 @@ appearance. The demo includes a Light/Dark segmented control to preview both.
   colors (such as pattern colors) display a black editing fallback; opening the
   popover alone does not overwrite the original value.
 - Select HEX in the same model menu to display and edit the current color as
-  `RRGGBB` or `RRGGBBAA` (alpha last), without a hash prefix. Input accepts 6 or
-  8 hex digits in the current editing color space; pasted values may include `#`.
-  Press Return to commit;
+  six-digit `RRGGBB`, without a hash prefix; alpha is never shown in this field.
+  Alpha is carried by the separate alpha input alongside HEX, which stays in
+  sync with the sliders, sampling, and external updates. Input accepts 6 or 8
+  hex digits in the current editing color space; pasted values may include `#`.
+  The last two digits of an eight-digit input set alpha, while six-digit input
+  leaves alpha untouched. An eight-digit value is applied as soon as it is typed
+  or pasted, and the field collapses back to six digits. Press Return to commit;
   invalid input leaves the color unchanged. Escape restores the current value.
-  Six-digit input sets alpha to 100%. A separate alpha input sits alongside HEX.
-  Sliders, sampling, and external updates refresh the displayed HEX value.
 - There is no Defaults, Core Data, saved-color library, global publisher, or
   clipboard access.
 

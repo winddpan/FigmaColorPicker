@@ -59,4 +59,13 @@ final class ColorComponentsTests: XCTestCase {
         XCTAssertNil(NSColor(colorSpace: .sRGB, hexString: "#aabbccxyz"))
         XCTAssertNil(NSColor(colorSpace: .sRGB, hexString: "#aabbccd"))
     }
+
+    func testRGBHexStringDropsAlpha() throws {
+        let opaque = try XCTUnwrap(NSColor(colorSpace: .sRGB, hexString: "1a2b3c"))
+        XCTAssertEqual(opaque.rgbHexString, "1a2b3c")
+
+        let translucent = try XCTUnwrap(NSColor(colorSpace: .sRGB, hexString: "#1A2B3C80"))
+        XCTAssertEqual(translucent.rgbHexString, "1a2b3c")
+        XCTAssertEqual(translucent.hexString, "1a2b3c80")
+    }
 }
