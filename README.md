@@ -85,8 +85,11 @@ appearance. The demo includes a Light/Dark segmented control to preview both.
   leaves alpha untouched. An eight-digit value is applied as soon as it is typed
   or pasted, and the field collapses back to six digits. Press Return to commit;
   invalid input leaves the color unchanged. Escape restores the current value.
-- There is no Defaults, Core Data, saved-color library, global publisher, or
-  clipboard access.
+- There is no Defaults, Core Data, saved-color library, or global publisher. The
+  library never touches the pasteboard itself: while the popover is open, ⌘X,
+  ⌘C, ⌘V, and ⌘A are forwarded to the focused field editor through the responder
+  chain. That keeps them working in hosts whose app has no Edit menu, such as a
+  menu bar app, where macOS otherwise has nothing to route them through.
 
 The original Solid app is retained separately as the extraction source.
 

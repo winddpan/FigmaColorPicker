@@ -34,6 +34,7 @@ public extension View {
     ) -> some View {
         popover(isPresented: isPresented, arrowEdge: arrowEdge) {
             PickerContent(selection: selection)
+                .textEditingShortcuts()
         }
     }
 }
