@@ -26,10 +26,7 @@ struct NumberInput: View {
         TextField(label, value: $value, format: RangeIntegerStyle(range: range))
             .focused($isFocused)
             .frame(height: 32)
-            .contentShape(Rectangle())
-            .onTapGesture {
-                isFocused = true
-            }
+            .selectAllOnClick(isFocused: $isFocused)
             .onChange(of: normalizedValue) { _, newValue in
                 value = Self.getValue(
                     normalizedValue: newValue,
@@ -120,16 +117,13 @@ struct PercentageInput: View {
                 format: RangeIntegerStyle(range: 0 ... 100)
             )
             .focused($isFocused)
+            .selectAllOnClick(isFocused: $isFocused)
 
             Text("%")
                 .foregroundStyle(.secondary)
                 .padding(.trailing, 4)
         }
         .frame(width: 50, height: 32)
-        .contentShape(Rectangle())
-        .onTapGesture {
-            isFocused = true
-        }
     }
 }
 
