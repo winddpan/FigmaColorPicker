@@ -3,7 +3,7 @@
 A standalone macOS 14+ SwiftUI color picker extracted from Solid.
 No third-party dependencies.
 
-![FigmaColorPicker with the saturation/brightness surface, hue and alpha sliders, and HEX input](Example/demo.jpg)
+<img src="Example/demo.jpg" width="360" alt="FigmaColorPicker with the saturation/brightness surface, hue and alpha sliders, and HEX input">
 
 Includes the original saturation/brightness and saturation/lightness surfaces,
 hue and alpha sliders, HSB/RGB/HSL numeric inputs, HEX input/output, and screen eyedropper.
